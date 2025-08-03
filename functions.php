@@ -50,6 +50,7 @@ function learwp_config() {
     );
     add_theme_support( 'custom-header', $args );
     add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'title-tag' );
 }
 
 add_action( 'widgets_init', 'learnwp_sidebars' );
@@ -68,6 +69,16 @@ function learnwp_sidebars() {
         'name' => 'Blog Sidebar',
         'id' => 'sidebar-2',
         'description' => 'Este es el sidebar del blog. Añada los widges que desee.',
+        'before_widget' => '<div class="widget-wrapper">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>'
+    ));
+
+    register_sidebar(array(
+        'name' => 'Social Icons',
+        'id' => 'social-media',
+        'description' => 'Social icons widgets',
         'before_widget' => '<div class="widget-wrapper">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',

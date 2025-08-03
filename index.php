@@ -14,7 +14,7 @@ use function PHPSTORM_META\type;
             <section class="middle-area">
                 <div class="container">
                     <div class="row mt-5">
-                        <div class="news col-md-9" data-aos="fade-up" data-aos-delay="0">
+                        <div class="news col-md-8" data-aos="fade-up" data-aos-delay="0">
                             <?php 
                                 if (have_posts()):
                                     while (have_posts()): the_post();
@@ -29,7 +29,7 @@ use function PHPSTORM_META\type;
                                 endif; 
                             ?>        
                         </div>
-                        <aside class="sidebar col-md-3 h-100" data-aos="fade-up" data-aos-delay="0">
+                        <aside class="sidebar card col-md-4 h-100" data-aos="fade-up" data-aos-delay="0">
                             <?php get_sidebar( 'blog' ); ?>
                         </aside>
                     </div>

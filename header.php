@@ -4,7 +4,6 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); ?>
-    <title>Document</title>
 </head>
 <body <?php body_class(); ?>>
     <div class="site-wrap">
@@ -13,7 +12,13 @@
                 <section class="top-bar">
                     <div class="container">
                         <div class="row py-4">
-                            <div class="social-media-icons col-xl-10 col-md-8 col-sm-8 col-6">Social icons</div>
+                            <div class="social-media-icons col-xl-10 col-md-8 col-sm-8 col-6">
+                                <?php
+                                    if(is_active_sidebar( 'social-media') ) {
+                                        dynamic_sidebar( 'social-media' );
+                                    }
+                                ?>
+                            </div>
                             <div class="search col-xl-2 col-md-4 col-sm-4 col-6">
                                 <?php get_search_form(); ?>
                             </div>

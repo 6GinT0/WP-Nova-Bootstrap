@@ -129,10 +129,10 @@
   <section class="middle-area">
     <div class="container">
       <div class="row my-5">
-        <aside class="sidebar col-md-3 h-100 border border-light-subtle p-4 rounded" data-aos="fade-up" data-aos-delay="0">
+        <aside class="sidebar col-md-4 h-100 border border-light-subtle p-4 rounded" data-aos="fade-up" data-aos-delay="0">
           <?php get_sidebar( 'home' ); ?>
         </aside>
-        <div class="news col-md-9" data-aos="fade-up" data-aos-delay="0">
+        <div class="news col-md-8" data-aos="fade-up" data-aos-delay="0">
           <div class="row">
             <!-- Featured Post -->
             <?php 
@@ -180,14 +180,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Map -->
-  <section class="map my-5" data-aos="fade-up" data-aos-delay="0">
-    <div class="container">
-
-      Map
     </div>
   </section>
 
