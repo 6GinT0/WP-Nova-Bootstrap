@@ -24,7 +24,9 @@ use function PHPSTORM_META\type;
                                     bootstrap_the_posts_pagination(); 
                                 else:
                             ?>
-                                <div class="alert alert-danger" role="alert">There are no posts to display</div>
+                                <div class="alert alert-danger" role="alert">
+                                    <?php _e( 'No hay posts para mostrar', 'learn-wp' ); ?>
+                                </div>
                             <?php 
                                 endif; 
                             ?>        
@@ -35,8 +37,6 @@ use function PHPSTORM_META\type;
                     </div>
                 </div>
             </section>
-
-            <section class="map" data-aos="fade-up" data-aos-delay="0">Map</section>
         </main>
     </div>
 <?php get_footer(); ?>

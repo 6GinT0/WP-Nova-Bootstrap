@@ -1,5 +1,13 @@
 <?php
 
+// Customizer
+require get_template_directory() . '/src/includes/customizer.php';
+
+// TGM Plugin Activation
+require_once get_template_directory() . '/src/includes/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/src/includes/required-plugins.php';
+
+
 add_action( 'wp_enqueue_scripts', 'load_theme_scripts' );
 function load_theme_scripts() {
     // CSS Files
@@ -39,8 +47,8 @@ function learwp_config() {
     // Registrar menú
     register_nav_menus(
         array(
-            'main_menu' => 'Header',
-            'footer_menu' => 'Footer'
+            'main_menu' => __( 'Header', 'learn-wp' ),
+            'footer_menu' => __( 'Footer', 'learn-wp' )
         )
     );
 
@@ -51,14 +59,22 @@ function learwp_config() {
     add_theme_support( 'custom-header', $args );
     add_theme_support( 'post-thumbnails' );
     add_theme_support( 'title-tag' );
+    add_theme_support( 'custom-logo', array(
+        'height' => 110,
+        'width' => 200
+    ));
+
+    $textdomain = 'learn-wp';
+    load_theme_textdomain($textdomain, get_stylesheet_directory() . '/languages');
+    load_theme_textdomain($textdomain, get_template_directory() . '/languages');
 }
 
 add_action( 'widgets_init', 'learnwp_sidebars' );
 function learnwp_sidebars() {
     register_sidebar(array(
-        'name' => 'Home Page Sidebar',
+        'name' => __( 'Home Page Sidebar', 'learn-wp' ),
         'id' => 'sidebar-1',
-        'description' => 'Este es el sidebar del inicio. Añada los widges que desee.',
+        'description' => __( 'Este es el sidebar del inicio. Añada los widges que desee.', 'learn-wp' ),
         'before_widget' => '<div class="widget-wrapper">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',
@@ -66,9 +82,9 @@ function learnwp_sidebars() {
     ));
 
     register_sidebar(array(
-        'name' => 'Blog Sidebar',
+        'name' => __('Blog Sidebar', 'learn-wp'),
         'id' => 'sidebar-2',
-        'description' => 'Este es el sidebar del blog. Añada los widges que desee.',
+        'description' => __( 'Este es el sidebar del blog. Añada los widges que desee.', 'learn-wp' ),
         'before_widget' => '<div class="widget-wrapper">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',
@@ -76,9 +92,9 @@ function learnwp_sidebars() {
     ));
 
     register_sidebar(array(
-        'name' => 'Social Icons',
+        'name' => __( 'Social Icons', 'learn-wp' ),
         'id' => 'social-media',
-        'description' => 'Social icons widgets',
+        'description' => __( 'Social icons widgets', 'learn-wp' ),
         'before_widget' => '<div class="widget-wrapper">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',

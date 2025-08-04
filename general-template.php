@@ -30,7 +30,9 @@
                                 endwhile;
                             else:
                         ?>
-                            <p class="alert alert-danger" role="alert">No hay posts para mostrar</p>
+                            <p class="alert alert-danger" role="alert">
+                                <?php _e( 'No hay posts para mostrar', 'learn-wp' ); ?>
+                            </p>
                         <?php 
                             endif; 
                         ?>        
